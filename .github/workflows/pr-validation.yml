@@ -21,17 +21,12 @@ jobs:
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          # Capture the output to get missing sections
           OUTPUT=$(node scripts/validate-pr-description.js "$PR_BODY" 2>&1 || true)
           echo "$OUTPUT"
-          
-          # Extract missing sections from the output
           MISSING_SECTIONS=$(echo "$OUTPUT" | grep "MISSING_SECTIONS=" | sed 's/MISSING_SECTIONS="//' | sed 's/"$//' || echo "")
           echo "missing_sections<<EOF" >> $GITHUB_OUTPUT
           echo "$MISSING_SECTIONS" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-          
-          # Exit with failure if validation failed
           if echo "$OUTPUT" | grep -q "PR description validation failed"; then
             exit 1
           fi
@@ -58,7 +53,7 @@ Please update your PR description and the validation will re-run automatically.`
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: commentBody
-            })
+            });
 
       - name: Comment on PR Success
         if: success()
@@ -72,4 +67,4 @@ Please update your PR description and the validation will re-run automatically.`
               body: `## PR Description Validation Passed
 
 Your PR description meets all the required standards! The PR is ready for review.`
-            }) 
+            }); 

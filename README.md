@@ -57,10 +57,12 @@ All pull requests must include the following sections:
 ### Validation
 
 The validation automatically extracts all `###` headers from the PR template and checks if they're present in the PR description. It runs on:
+
 - **GitHub Actions**: Every PR creation/update via `.github/workflows/pr-validation.yml`
 - **Local Development**: Use `npm run validate-pr "<PR_DESCRIPTION>"` to test locally
 
 **Blocking Behavior:**
+
 - ❌ **Failed validation**: Blocks merge button, adds failure comment with missing sections
 - ✅ **Passed validation**: Allows merge, adds success comment
 - 📝 **Automatic comments**: Detailed feedback on what's missing or confirmation of success

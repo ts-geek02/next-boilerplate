@@ -75,4 +75,7 @@ jspm_packages/
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
-.pnp.* 
+.pnp.*
+
+# GitHub Actions workflows (YAML formatting conflicts)
+.github/workflows/ 

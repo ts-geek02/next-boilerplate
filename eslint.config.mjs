@@ -45,7 +45,8 @@ const eslintConfig = [
           leadingUnderscore: 'forbid',
           trailingUnderscore: 'forbid',
           filter: {
-            regex: '^(page|layout|loading|error|not-found|global-error|RootLayout|Home|UserProfile)$',
+            regex:
+              '^(page|layout|loading|error|not-found|global-error|RootLayout|Home|UserProfile)$',
             match: false,
           },
         },
@@ -79,7 +80,10 @@ const eslintConfig = [
       'import/named': 'error',
 
       // Variable naming
-      'id-length': ['error', { min: 2, exceptions: ['i', 'j', 'k', 'x', 'y', 'z'] }],
+      'id-length': [
+        'error',
+        { min: 2, exceptions: ['i', 'j', 'k', 'x', 'y', 'z'] },
+      ],
       'no-underscore-dangle': 'error',
 
       // Function naming

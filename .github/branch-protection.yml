@@ -3,7 +3,7 @@
 # You can apply these settings in GitHub repository settings
 
 # Recommended Branch Protection Rules:
-# 
+#
 # 1. Require status checks to pass before merging:
 #    - "PR Description Validation" (from .github/workflows/pr-validation.yml) - REQUIRED
 #    - "Lint" (if you have a lint workflow)
@@ -34,4 +34,4 @@
 #   --field required_status_checks='{"strict":true,"contexts":["PR Description Validation"]}' \
 #   --field enforce_admins=true \
 #   --field required_pull_request_reviews='{"required_approving_review_count":1,"dismiss_stale_reviews":true}' \
-#   --field restrictions=null 
+#   --field restrictions=null
